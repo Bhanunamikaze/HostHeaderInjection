@@ -1,3 +1,3 @@
 # VulnFinder
-A simple Collections of tool written in golang to Detect Vulnerabilities
+A simple Collections of tool written in golang/Bash to Detect Vulnerabilities
 
