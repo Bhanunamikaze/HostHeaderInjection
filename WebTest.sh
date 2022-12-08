@@ -29,11 +29,11 @@ for port in $(cat /tmp/adssadsa.txt); do
 		fi
 	http_code=$(curl http://$1:$port/debug/pprof/ -L -w '%{http_code}' -o /dev/null -s )
 		if [[ $http_code -eq 200 ]]; then 
-			echo "[+] go pprof Debug is accessible at https://$1:$port/debug/pprof/ and Status Code is: $http_code"
+			echo "[+] go pprof Debug is accessible at http://$1:$port/debug/pprof/ and Status Code is: $http_code"
 		fi
 	http_code=$(curl http://$1:$port/metrics -kL -w '%{http_code}' -o /dev/null -s )
 		if [[ $http_code -eq 200 ]]; then 
-			echo "[+] Metrics is accessible at https://$1:$port/metrics and Status Code is: $http_code".
+			echo "[+] Metrics is accessible at http://$1:$port/metrics and Status Code is: $http_code".
 		fi
 	http_code=$(curl https://$1:$port/.well-known/openid-configuration -kL -w '%{http_code}' -o /dev/null -s )
 		if [[ $http_code -eq 200 ]]; then 
