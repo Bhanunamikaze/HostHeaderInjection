@@ -1,5 +1,5 @@
 #!/bin/bash
-#This can be used to create simple wordlist based detection 
+#This can be used to create simple wordlist based detection on all given ports at once
 
 if [ $# -eq 0 ]
         then
