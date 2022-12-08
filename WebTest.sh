@@ -23,9 +23,9 @@ for port in $(cat /tmp/adssadsa.txt); do
 		if [[ $http_code -eq 200 ]] || [[ $http_code -eq 301 ]];  then 
 			echo "[^] Something is accessible at HTTP://$1:$port and Status Code is: $http_code"
 		fi
-	http_code=$(curl http://$1:$port/version -kL -w '%{http_code}' -o /dev/null -s )
+	http_code=$(curl https://$1:$port/version -kL -w '%{http_code}' -o /dev/null -s )
 		if [[ $http_code -eq 200 ]] || [[ $http_code -eq 403 ]]; then 
-			echo "[+] K8 Version accessible at https://$1:$port/version and Status Code is: $http_code"
+			echo "[+] Kubernetes/K8 Version accessible at https://$1:$port/version and Status Code is: $http_code"
 		fi
 	http_code=$(curl http://$1:$port/debug/pprof/ -L -w '%{http_code}' -o /dev/null -s )
 		if [[ $http_code -eq 200 ]]; then 
