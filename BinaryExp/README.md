@@ -33,9 +33,10 @@ This repository contains a Bash script that enables the conversion of memory add
   
 ## Usage:
 $ bash MemoryAddressToHex.sh 08048490
-
-[*] Given Input is: 08048490
-[*] Little Endian Output is: 90480408
-[*] Hex Value of the Memory Address is: \x90\x48\x04\x08
+``` 
+Given Input is: 08048490
+Little Endian Output is: 90480408 
+Hex Value of the Memory Address is: \x90\x48\x04\x08
+```
 
   
