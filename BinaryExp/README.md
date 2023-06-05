@@ -24,6 +24,18 @@ Options:
   --dec DEC_VALUE    Convert decimal value to hex
 
 # MemoryAddressToHex.sh 
-- This code converts 
-  - Hex Addresses from Binaries to Normal Hex values 
-  - Converts Hex values into Little Endian Format
+
+This repository contains a Bash script that enables the conversion of memory addresses from little endian format to hexadecimal representation. The script is designed to be simple and easy to use, making it a handy tool for developers, security researchers, and anyone working with low-level programming.
+
+## Features:
+  Converts memory addresses to little endian format
+  Generates the corresponding hexadecimal value
+  
+## Usage:
+$ bash MemoryAddressToHex.sh 08048490
+
+[*] Given Input is: 08048490
+[*] Little Endian Output is: 90480408
+[*] Hex Value of the Memory Address is: \x90\x48\x04\x08
+
+  
