@@ -1,8 +1,10 @@
 # ConvertHexDecReverse
-- This code converts 
-  - Decimal to Hex 
-  - Hex to Decimal 
-  - Hex to Reverse hex (Negation) ( Ex: 0xffffffc0,  # After nagation, becomes 0x40; 0x10014db4,   # NEG EAX # RETN ) 
+- It provides functions to convert hexadecimal to decimal and reversed hexadecimal, as well as decimal to hexadecimal.
+
+## Features
+- Convert hexadecimal values to decimal and reversed hexadecimal
+- Convert decimal values to hexadecimal
+- Hex to Reverse hex (Negation) ( Ex: 0xffffffc0,  # After nagation, becomes 0x40; 0x10014db4,   # NEG EAX # RETN ) 
 
 ## Usage 
 ConvertHexDecReverse.py [-h] (--hex HEX | --dec DEC)
