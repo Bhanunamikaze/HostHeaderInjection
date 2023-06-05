@@ -17,12 +17,14 @@ Hex 0x40 to reversed hex: 0xFFFFFFC0
 python ConvertHexDecReverse.py --dec 60  
 Decimal 60 to hex: 0x0000003C
 
-```Usage: ./ConvertHexDecReverse.sh [OPTIONS]
+```
+Usage: ./ConvertHexDecReverse.sh [OPTIONS]
 Convert hexadecimal and decimal values
 
 Options:
   --hex HEX_VALUE    Convert hexadecimal value to decimal and reversed hex
-  --dec DEC_VALUE    Convert decimal value to hex```
+  --dec DEC_VALUE    Convert decimal value to hex
+```
 
 # MemoryAddressToHex.sh 
 
