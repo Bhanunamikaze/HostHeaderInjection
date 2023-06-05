@@ -14,7 +14,7 @@ decimal_to_hex() {
 
 # Display help message
 show_help() {
-    echo "Usage: ./convert.sh [OPTIONS]"
+    echo "Usage: ./ConvertHexDecReverse.sh [OPTIONS]"
     echo "Convert hexadecimal and decimal values"
     echo ""
     echo "Options:"
