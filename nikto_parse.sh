@@ -6,7 +6,7 @@
 # Usage: 
 # wget https://raw.githubusercontent.com/Bhanunamikaze/PenTest-Scripts/main/nikto_parse.sh
 # chmod +x nikto_parse.sh
-# ./nikto_parse.sh
+# ./nikto_parse.sh |tee output.txt
 
 current_dir=$(pwd)
 
