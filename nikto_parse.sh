@@ -4,7 +4,7 @@
 # Runs the script on Present working directory, looks for filename nikto_ip_port.txt recursively and shows the output in csv format. 
 # Example output: 127.0.0.1, "80, 443", "X-Frame-Options" "X-XSS-Protection" "X-Content-Type-Options""
 # Usage: 
-# wget 
+# wget https://raw.githubusercontent.com/Bhanunamikaze/PenTest-Scripts/main/nikto_parse.sh
 # chmod +x nikto_parse.sh
 # ./nikto_parse.sh
 
