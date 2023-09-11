@@ -6,7 +6,7 @@
 # Usage: 
 # wget https://raw.githubusercontent.com/Bhanunamikaze/PenTest-Scripts/main/nikto_parse.sh
 # chmod +x nikto_parse.sh
-# ./nikto_parse.sh |tee output.txt
+# ./nikto_parse.sh 
 
 current_dir=$(pwd)
 
@@ -38,11 +38,12 @@ while IFS= read -r -d '' filename; do
     fi
 done < <(find "$current_dir" -type f -name 'nikto_*.txt' -print0)
 
-echo "ip, port, missing_headers"
+echo "ip, port, missing_headers" >> output.csv
 
 #Group results to show in csv format
 for key in "${!missing_headers_map[@]}"; do
     IFS="," read -r ip missing_headers <<< "$key"
     ports="${missing_headers_map["$key"]}"
-    echo "$ip, \"$ports\", \"$missing_headers\""
+    echo -e "$ip; $ports; $missing_headers" >> output.csv    #To Convert to Proper Columns in Excel, Click on "Text to Columns" under "Data" Section and Select Delimiter as ";"
+    #echo "$ip, \"$ports\", \"$missing_headers\""        # Update it based on your required output format
 done
