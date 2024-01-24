@@ -1,5 +1,6 @@
 #!/bin/bash
-# This script takes input file with list of ip addresses or hosts and runs curl command on all the hosts to fetch its response status code.
+# This script takes an input file with a list of IP addresses or hosts
+# and runs curl commands on both port 80 and 443 to fetch the response status code.
 
 # Check if the input file exists
 if [ ! -f "$1" ]; then
@@ -10,10 +11,12 @@ fi
 # Loop through each host in the file
 while IFS= read -r host; do
   if [ -n "$host" ] && ! [[ "$host" =~ ^# ]]; then
-    echo -n "Host: $host, Response Code: "
+    # Check port 80
+    response_code_80=$(curl --connect-timeout 3 -s -kL -o /dev/null -w "%{http_code}" "http://$host/")
+    echo "$host, 80, $response_code_80 "
 
-    response_code=$(curl --connect-timeout 3 -s -kL  -o /dev/null -w "%{http_code}" "https://$host/")
-
-    echo "$host, $response_code"
+    # Check port 443
+    response_code_443=$(curl --connect-timeout 3 -s -kL -o /dev/null -w "%{http_code}" "https://$host/")
+    echo "$host, 443,  $response_code_443 "
   fi
 done < "$1"
