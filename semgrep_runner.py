@@ -1,4 +1,5 @@
-# This Script is used to 
+# This Script is used to run Semgrep Tool on multiple directories and can take multiple semgrep yaml files 
+# Script takes in a given directory path and searches for YAML Files inside of it and uses them as rules 
 
 import glob
 import os
@@ -12,14 +13,16 @@ def run_semgrep(yaml_file, directory_path):
     base_path, _ = os.path.splitext(yaml_file)
     file_name = os.path.basename(base_path)
 
+    # Update output directory PATH HERE
     semgrep_command = (
         f"{SEMGRPE_EXECUTABLE} --config={yaml_file} {directory_path} "
-        f"--output='strk/Download   s/rules/Output/{file_name}_{last_directory}.json' --json"
+        f"--output='strk/Download/Output/{file_name}_{last_directory}.json' --json"
     )
     subprocess.run(semgrep_command, shell=True)
     return f"Completed: {file_name} on {last_directory}"
 
 def process_directory(directory_path):
+    # Update the YAML Files PATH HERE
     config_file_path = "strk/Downloads/rules/"
     yaml_files = glob.glob(os.path.join(config_file_path, "**", "*.yaml"), recursive=True)
 
@@ -34,6 +37,7 @@ def process_directory(directory_path):
             print(result)
 
 def main():
+    # Update your repository paths here 
     directory_paths = [
         "strk/app/Console/",
         "strk/app/Controller/",
